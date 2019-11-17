@@ -18,7 +18,7 @@ function loadData() {
     urlContent = document.getElementById('url-src');
     imgContent = document.getElementsByClassName('img-src');
 
-    urlContent.innerHTML = '<p>' + jsonData[0].url.substr(0, 60) + '</p>';
+    urlContent.textContent = jsonData[0].url.substr(0, 60);
 
     showSlides(slideIndex);
 }
@@ -121,15 +121,15 @@ function getResults() {
         + '</a>';
 
     if (score >= 400) {
-        header.innerHTML = 'Perfect!';
-        subheader.innerHTML = 'There\'s no fooling you.';
+        header.textContent = 'Perfect!';
+        subheader.textContent = 'There\'s no fooling you.';
         dataLayer.push({'event': 'Results', 'status': 'Perfect'});
     } else if (score >= 200) {
-        header.innerHTML = 'OK, you know a few things to look out for.';
+        header.textContent = 'OK, you know a few things to look out for.';
         subheader.innerHTML = 'Take a look ' + bulb + ' so you know what to look out for next time!';
         dataLayer.push({'event': 'Results', 'status': 'Ok'});
     } else {
-        header.innerHTML = 'Ouch, you’ve been hacked!';
+        header.textContent = 'Ouch, you’ve been hacked!';
         subheader.innerHTML = 'Take a look ' + bulb + ' so you know what to look out for next time!';
         dataLayer.push({'event': 'Results', 'status': 'Disaster'});
     }
@@ -143,7 +143,7 @@ function getScore(val) {
     let points = document.getElementsByClassName('score-cnt');
     score += val;
     for (let i = 0; i < points.length; i++) {
-        points[i].innerHTML = score;
+        points[i].textContent = score;
     }
 }
 
@@ -190,24 +190,44 @@ function isPhishing(answer) {
     let btnFake = document.getElementById('fake');
     let correct = '<i class=\'fas fa-thumbs-up\' style="color: #160E53; font-size: 8em;"></i>';
     let incorrect = '<i class=\'fas fa-thumbs-down\' style="color: #160E53; font-size: 8em;"></i>';
+    let currStatus = imgContent[step].getAttribute('data-status') === '1';
 
     $(btnReal).fadeOut(100);
     $(btnFake).fadeOut(100);
 
-    let currStatus = imgContent[step].getAttribute('data-status') === '1';
+
+    let img = imgContent[step].getElementsByTagName('img')[0];
+    let urlbar = document.getElementsByClassName('url-bar')[0];
+    let imgPath = img.src.substring(0,img.src.length - 4);
+    let newSrc = imgPath + '_err.jpg';
 
     if (answer === currStatus) {
         dialogueImg.innerHTML = correct;
-        dialogueAns.innerHTML = '<h2>Good job!</h2>';
+        dialogueAns.textContent = 'Good job!';
         dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">100 points</span></h3>';
         toggle(imageWindow, dialogueWindow);
         getScore(100);
     } else {
-        dialogueImg.innerHTML = incorrect;
-        dialogueAns.innerHTML = '<h2>Oops..</h2>';
-        dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>';
-        toggle(imageWindow, dialogueWindow);
-        getScore(0);
+        if (currStatus) {
+            dialogueImg.innerHTML = incorrect;
+            dialogueAns.textContent = 'Oops..';
+            dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>';
+            toggle(imageWindow, dialogueWindow);
+            getScore(0);
+        } else {
+            $(imageWindow).fadeOut(500, function() {
+                $(img).attr('src',newSrc);
+            }).fadeIn(1000);
+            $(urlbar).css({'background-color': '#f69ab3'});
+            setTimeout(function(){
+                $(urlbar).css({'background-color' : '#f4f3fa'});
+                dialogueImg.innerHTML = incorrect;
+                dialogueAns.textContent = 'Oops..';
+                dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>';
+                toggle(imageWindow, dialogueWindow);
+                getScore(0);
+            }, 6000);
+        }
     }
 }
 
@@ -228,5 +248,6 @@ function move() {
     $(btnFake).fadeIn(2000);
 
     step++;
-    urlContent.innerHTML = '<p>' + jsonData[step].url.substr(0, 60) + '</p>';
+    urlContent.textContent = jsonData[step].url.substr(0, 60);
 }
+
