@@ -91,17 +91,8 @@ Other use cases of GTM tags are the download button by *data-role* in the HTML f
    data-role="download-link"> download avast
 </a>
 ```
-And the tips button by *ID*:
-```html
-<button id="tips-mobile" 
-        onclick="popIt(); 
-        dataLayer.push({'event': 'tips-button', 'type': 'mobile'});"> <i class='far fa-lightbulb'></i> 
-</button>
-```
-## Useful links
+## Other links
 
 Source code of the visualization tool of Tomas: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game).
 
-Source data for the image preprocessing: [link](https://drive.google.com/file/d/1xWkzk5YwCTTTaUGEMXUEBskFKBjXf7r8/view?usp=sharing).
-
-NEW source images / icons / logos: [link](https://drive.google.com/file/d/1Ji8x2s2dNo9mrNW7HlJtYhDkJqb0RQsE/view?usp=sharing).
+Source data: [link](https://drive.google.com/file/d/1XjausBSNNXjtUD2vy1LWzcpUxaS0CyIy/view).
