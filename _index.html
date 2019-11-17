@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="Avast Phishing Challenge" name="description"/>
+    <meta content="avast phishing,antivirus,phishing game" name="keywords"/>
+    <meta content="Eder Tejada" name="author"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Avast Phishing Challenge</title>
+    <link rel="icon" type="image/png" href="https://static3.avast.com/2000571/web/i/favicon-16x16.png" sizes="16x16" />
+    <link href='https://fonts.googleapis.com/css?family=Proxima+Nova' rel='stylesheet'>
+    <link crossorigin='anonymous' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' rel='stylesheet'>
+    <link href="style/main.css" rel="stylesheet">
+    <link href="style/media.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script>
+        var jsonData = <%- jsonData %>;
+    </script>
+    <script src="script/main.js" type="text/javascript"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MB289WJ');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB289WJ"
+            height="0" width="0" style="display:none;visibility:hidden">
+    </iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+    <span id="avast-logo"><img alt="logo-blue" src="img/avast-logo-blue.png"></span>
+    <nav>
+        <button id="tips" onclick="popIt(); dataLayer.push({'event': 'tips-button', 'type': 'desktop'});">
+            <span id="nav-icon"><img alt="bulb" src="img/icons/bulb.png"></span>
+        </button>
+    </nav>
+</header>
+
+<section id="popup">
+    <div class="container popup-container">
+        <span class="highlight"><h2>How to spot a fake website?</h2></span>
+        <h3><img alt="bulb-white" src="img/icons/bulb-white.png">Tips</h3>
+        <table>
+            <tr>
+                <td><img alt="click" src="img/icons/click.png"></td>
+                <td>Watch out! Be aware of <span class="highlight">what you’re clicking</span> on</td>
+            </tr>
+            <tr>
+                <td><img alt="social-media" src="img/icons/social-media.png"></td>
+                <td><span class="highlight">Phishing</span> often happens via email, messaging apps (whatsApp,
+                    Messenger, etc), and social media
+                </td>
+            </tr>
+            <tr>
+                <td><img alt="url" src="img/icons/url.png"></td>
+                <td>Look carefully at <span class="highlight">the URL</span> before entering any information on the
+                    website
+                    <ul>
+                        <li>Secured URL - <img alt="green-lock" src="img/icons/green-lock.png">+ HTTPS</li>
+                        <li>Url address is not misspelled or unusual</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><img alt="inbox" src="img/icons/alert.png"></td>
+                <td><span class="highlight">Use common sense</span> - offers too good to be true are usually a scam, and
+                    poor grammar and misspelled
+                    words are a dead give away
+                </td>
+            </tr>
+            <tr>
+                <td><img alt="question-mark" src="img/icons/question-mark.png"></td>
+                <td>If it looks <span class="highlight">suspicious</span>, don’t click on it.<br>Go to the official
+                    website
+                    of the business you are dealing with
+                </td>
+            </tr>
+            <tr>
+                <td><img alt="question-mark" src="img/icons/account.png"></td>
+                <td>The page only has <span class="highlight">log in details</span> - missing “Create a new account”,
+                    and/or “Forgot your password?”
+                </td>
+            </tr>
+        </table>
+        <button class="close">ok, go back</button>
+    </div>
+</section>
+
+<section id="master">
+    <div class="container">
+        <h1><span class="highlight">Fake</span> or Real?</h1>
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <div id="browser-window">
+            <div id="browser-nav">
+                <span class="elem-left"><p>&#9675;&#9675;&#9675;</p></span>
+                <div class="url-bar">
+                    <img alt="blue-lock" src="img/icons/blue-lock.png">
+                    <!-- LOAD HERE THE URL -->
+                    <span id="url-src"></span>
+                    <!-- LOAD HERE THE URL -->
+                </div>
+                <span class="elem-right"><p>&#9776;</p></span>
+            </div>
+            <div class="browser-container">
+                <div class="inner-content">
+                    <div id="welcome-page">
+                        <h1><span class="highlight">Fake</span> or Real?</h1>
+                        <img alt="anchor" src="img/icons/anchor.png">
+                        <h2>Think you can spot<br> a <span class="highlight">fake</span> website?</h2>
+                        <p>Take a good look and see if you can catch the differences between a real website, and a
+                            fake</p>
+                        <button id="start" onclick="nextPage('welcome-page', 'game-page')">let's play</button>
+                    </div>
+                    <div id="game-page">                 
+                        <div id="img-container">
+                            <!-- LOAD HERE THE SOURCE IMAGES -->
+                            <div class="mySlides">
+                                <span class="img-src" data-status="1" ></span>
+                            </div>
+                            <div class="mySlides">
+                                <span class="img-src" data-status="0"></span>
+                            </div>
+                            <div class="mySlides">
+                                <span class="img-src" data-status="1"></span>
+                            </div>
+                            <div class="mySlides">
+                                <span class="img-src" data-status="0"></span>
+                            </div>
+                            <div class="mySlides">
+                                <span class="img-src" data-status="1"></span>
+                            </div>
+                            <!-- LOAD HERE THE SOURCE IMAGES -->
+                        </div>
+                        <button id="real" onclick="isPhishing(true)">
+                            <img alt="like" src="img/icons/like.png"> real
+                        </button>
+                        <button id="fake" onclick="isPhishing(false)">
+                            <img alt="like" src="img/icons/dislike.png"> fake
+                        </button>
+                    </div>
+                    <div id="dialogue">
+                        <span id="dialogue-img"></span>
+                        <span id="dialogue-ans"></span>
+                        <span id="dialogue-score"></span>
+                        <button id="continue" onclick="move()">continue</button>
+                    </div>
+                    <div id="summary-page">
+                        <h2><span class="highlight results"></span></h2>
+                        <h3><span class="results"></span></h3>
+                        <p>Most people can’t tell the difference between a real and a fake website.
+                            Trying to be your own phishing detection engine is too hard.
+                            Use a strong antivirus like Avast Free with award winning phishing detection.</p>
+                        <a id="download" class="bi-download-link" href="https://www.avast.com/" data-role="download-link">
+                            download avast
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="score">
+            <div class="score-container">
+                <span class="score-cnt highlight">0</span>
+                <p>your score</p>
+            </div>
+            <button class="reset" onClick="window.location.reload();">
+                <img alt="rewind" src="img/icons/rewind.png"> reset
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="mobile-footer">
+    <div class="container">
+        <div class="dots-container">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <button class="reset" onClick="window.location.reload();"><i class='fas fa-redo'></i></button>
+        <p>your score: <span class="score-cnt highlight">0</span></p>
+        <button id="tips-mobile" onclick="popIt(); dataLayer.push({'event': 'tips-button', 'type': 'mobile'});">
+            <i class='far fa-lightbulb'></i>
+        </button>
+    </div>
+</section>
+
+</body>
+</html>

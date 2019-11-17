@@ -1,0 +1,243 @@
+/**
+ *
+ * @author Eder Tejada (ederjair.tejadaortigoza@avast.com)
+ *
+*/
+
+@media (max-device-width: 1500px) {
+    table {
+        width: 60%;
+    }
+    #master .container {
+        width: 70%;
+    }
+    .container h1 {
+        font-size: 2.6em;
+    }
+    .container h2 {
+        font-size: 2.2em;
+    }
+    .container h3 {
+        font-size: 1.6em;
+    }
+    .avast-logo {
+        width: 12%;
+    }
+    .tips {
+        width: 4%;
+    }
+}
+@media (max-device-width: 1024px) {
+    table {
+        font-size: 1em;
+    }
+    ul li {
+        font-size: 0.9em;
+    }
+    button {
+        padding: 0.9em;
+        width: 20%;
+    }
+    #master .container,
+    #mobile-footer .container {
+        width: 100%;
+    }
+    .container h1 {
+        display: none;
+    }
+    .container h2 {
+        font-size: 1.8em;
+    }
+    .container h3 {
+        font-size: 1.4em;
+    }
+    #score,
+    .dots-container,
+    header {
+        display: none;
+    }
+    #popup {
+        padding-top: 1%;
+    }
+    .close {
+        display: block;
+    }
+    .dot {
+        height: 0.6em;
+        width: 0.6em;
+    }
+    #browser-window {
+        height: 34.4em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .browser-container {
+        width: 100%;
+        height: 34.4em;
+        background-color: #FFFFFF;
+    }
+    #welcome-page {
+        width: 50%;
+    }
+    #welcome-page h1 {
+        display: block;
+    }
+    #game-page button {
+        border-radius: 50%;
+        font-size: 1.5em;
+        width: 7%;
+    }
+    #img-container img {
+        width: 100%;
+        height: 34.4em;
+    }
+    #dialogue {
+        padding-top: 15%;
+    }
+    #real {
+        left: 0;
+    }
+    #fake {
+        right: 0;
+    }
+    .reset {
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-left: 10%;
+        float: left;
+        width: 6%;
+        border-radius: 60%;
+    }
+    .score-cnt {
+        font-size: 1.5em;
+    }
+    #mobile-footer {
+        display: inline-block;
+    }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    body {
+        padding-top: 10%;
+    }
+    #tips-mobile,
+    .reset {
+        width: 7%;
+    }
+    #game-page button {
+        width: 9%;
+    }
+    #download {
+        width: 60%;
+    }
+    table {
+        width: 80%;
+        margin-bottom: 10%;
+    }
+}
+@media (max-device-width: 425px) {
+    table {
+        width: 100%;
+        font-size: 0.8em;
+        border-spacing: 1em;
+    }
+    ul li {
+        font-size: 0.9em;
+    }
+    a {
+        font-size: 0.9em;
+    }
+    button {
+        font-size: 0.9em;
+        padding: 0.9em;
+        width: 50%;
+    }
+    .container h1 {
+        font-size: 2em;
+    }
+    .container h2 {
+        font-size: 1.2em;
+    }
+    .container h3 {
+        font-size: 1em;
+    }
+    .container p {
+        font-size: 0.9em;
+    }
+    #browser-nav .elem-left,
+    #browser-nav .elem-right {
+        display: none;
+    }
+    #tips-mobile {
+        margin-right: 5%;
+        width: 12.5%;
+    }
+    .popup-container h3 {
+        display: none;
+    }
+    .popup-container img {
+        margin: 0 0.4em 0;
+    }
+    .close {
+        width: 40%;
+    }
+    .dot {
+        height: 0.4em;
+        width: 0.4em;
+    }
+    #browser-window {
+        height: 26.5em;
+    }
+    .browser-container {
+        height: 25em;
+    }
+    #browser-nav p {
+        font-size: 0.9em;
+        vertical-align: middle;
+    }
+    .url-bar {
+        width: 90%;
+    }
+    #welcome-page {
+        width: 100%;
+    }
+    #welcome-page h1 {
+        display: block;
+    }
+    #game-page button {
+        font-size: 1.2em;
+        width: 15.5%;
+    }
+    #img-container img {
+        height: 20em;
+        padding-top: 20%;
+    }
+    #dialogue {
+        padding-top: 25%;
+    }
+    #dialogue button {
+        width: 80%;
+    }
+    .reset {
+        font-size: 0.9em;
+        margin-left: 5%;
+        width: 12.5%;
+    }
+    #summary-page {
+        width: 100%;
+        padding-top: 25%;
+    }
+    #download {
+        padding: 0.9em;
+    }
+    #mobile-footer {
+        padding: 2% 0 2%;
+    }
+    #mobile-footer p {
+        font-size: 0.9em;
+    }
+}
+@media (max-device-width: 425px) and (min-device-height: 575px) and (orientation: portrait) {
+    body {
+        padding-top: 15%;
+    }
+}

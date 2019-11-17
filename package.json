@@ -1,0 +1,19 @@
+{
+  "name": "phishing-game",
+  "version": "1.0.0",
+  "homepage": "https://www.phish.guru/",
+  "repository": {
+    "type": "git",
+    "url": "https://git.int.avast.com/tejadaortigoza/phishing-game"
+  },
+  "author": "@avast.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js app.js"
+  },
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.2"
+  }
+}
