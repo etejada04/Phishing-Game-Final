@@ -88,11 +88,8 @@
         width: 7%;
     }
     #img-container img {
-        width: 100%;
+        width: 90%;
         height: 34.4em;
-    }
-    #dialogue {
-        padding-top: 15%;
     }
     #real {
         left: 0;
@@ -163,6 +160,9 @@
     .container p {
         font-size: 0.9em;
     }
+    #dialogue p {
+        font-size: 0.7em;
+    }
     #browser-nav .elem-left,
     #browser-nav .elem-right {
         display: none;
@@ -212,7 +212,7 @@
         padding-top: 20%;
     }
     #dialogue {
-        padding-top: 25%;
+        padding-top: 15%;
     }
     #dialogue button {
         width: 80%;
@@ -224,7 +224,7 @@
     }
     #summary-page {
         width: 100%;
-        padding-top: 25%;
+        padding-top: 15%;
     }
     #download {
         padding: 0.9em;
@@ -235,9 +235,13 @@
     #mobile-footer p {
         font-size: 0.9em;
     }
+    #img-container img {
+        width: 100%;
+    }
 }
 @media (max-device-width: 425px) and (min-device-height: 575px) and (orientation: portrait) {
     body {
         padding-top: 15%;
     }
 }
+
