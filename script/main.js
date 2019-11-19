@@ -223,7 +223,9 @@ function isPhishing(answer) {
                 $(urlbar).css({'background-color' : '#f4f3fa'});
                 dialogueImg.innerHTML = incorrect;
                 dialogueAns.textContent = 'Oops..';
-                dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>';
+                dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>'
+                                            + '<p><i class=\'far fa-lightbulb\'></i> Watch out for suspicious URLs'
+                                            + ', buttons, text fields or missing logos!</p>';
                 toggle(imageWindow, dialogueWindow);
                 getScore(0);
             }, 6000);
