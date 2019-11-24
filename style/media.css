@@ -195,7 +195,7 @@
         vertical-align: middle;
     }
     .url-bar {
-        width: 90%;
+        width: 80%;
     }
     #welcome-page {
         width: 100%;
@@ -212,6 +212,7 @@
         padding-top: 20%;
     }
     #dialogue {
+        width: 80%;
         padding-top: 15%;
     }
     #dialogue button {
@@ -244,4 +245,3 @@
         padding-top: 15%;
     }
 }
-
