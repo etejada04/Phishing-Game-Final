@@ -9,10 +9,10 @@
 5. [Useful links](#useful-links)
 
 ## Requirements
-For this phase of the game is required to retrieve the following data:
-*  Images (max. 5 for each game)
-*  URLs
-*  Information if the image is real or fake (combine real and fake - i.e. not only real images in one game)
+The game is required to showcase the following information:
+*  Images and URLs (max. 5 for each game) of different sites hosted in Avast CDN. The data has to be shown uniquely and randomly.
+*  Information if the image is real or fake (combine real and fake - i.e. not only real images in one game).
+* Highlight errors in images.
 
 ## How to run the app on server
 ```console
@@ -93,6 +93,6 @@ Other use cases of GTM tags are the download button by *data-role* in the HTML f
 ```
 ## Other links
 
-Source code of the visualization tool of Tomas: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game).
+Repository of visualization tool created by Tomas Trnka: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game).
 
 Source data: [link](https://drive.google.com/file/d/1XjausBSNNXjtUD2vy1LWzcpUxaS0CyIy/view).
