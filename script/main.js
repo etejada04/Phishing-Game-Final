@@ -24,7 +24,7 @@ function loadData() {
 }
 
 /**
- * @brief Toggle function to show elem1 and hide elem2
+ * @brief Function to toggle elem1 and elem2
  * @param elem1 Denotes the first element
  * @param elem2 Denotes the second element
  * @return Hide first element and display the second
@@ -110,7 +110,7 @@ function popIt() {
 }
 
 /**
- * @brief This function retrieves the final result to the summary page based on final score
+ * @brief Function to retrieve the final result in the summary page based on final score
  * @return Update results of the summary page according to the score
  */
 function getResults() {
@@ -216,8 +216,8 @@ function isPhishing(answer) {
             getScore(0);
         } else {
             $(imageWindow).fadeOut(500, function() {
-                $(img).attr('src',newSrc);
-            }).fadeIn(1000);
+                $(img).prop('src', newSrc + '?' + Math.random());
+            }).fadeIn(2000);
             $(urlbar).css({'background-color': '#f69ab3'});
             setTimeout(function(){
                 $(urlbar).css({'background-color' : '#f4f3fa'});
@@ -234,7 +234,7 @@ function isPhishing(answer) {
 }
 
 /**
- * @brief Function to close current dialogue and move to the next image
+ * @brief Function to close current dialogue window and move to the next image or page
  * @return Close dialogue and move to the next image
  */
 function move() {
