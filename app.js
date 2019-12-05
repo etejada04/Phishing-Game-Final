@@ -63,7 +63,7 @@ function readTsv(callback) {
             let status = getRandomInt(0, 1);
             con[5] = status;
 
-            if (fs.existsSync(path.join(__dirname, '/data/data/images/' + con[status] + '.jpg'))) {
+            if (fs.existsSync(path.join(__dirname, '/data/images/' + con[status] + '.jpg'))) {
                 if (items.length > 4) {
                     return true;
                 }
