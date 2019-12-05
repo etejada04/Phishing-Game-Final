@@ -19,7 +19,7 @@ The game is required to showcase the following information:
 cd C:\Users\Public\app
 node ./node_modules/nodemon/bin/nodemon.js src/app.js
 ```
-Modify variable *sslPort* in **app.js** file for local development and production.
+Modify variable *sslPort* in **app.js** file for local development or production.
 ```javascript
 const sslPort = 8081;    //PROD 443 , DEV 8081
 ```
@@ -46,7 +46,7 @@ Then this record is pushed to the final set of items:
 var items = [];  /*Max. 5 items*/ 
 items.push(con);
 ```
-All these items are read by the *readTsv* function:
+All these items are read by the **readTsv()** function:
 ```javascript
 readTsv(function (data) {
         data.forEach((item) => {
@@ -69,7 +69,7 @@ And displayed to the HTML file:
 <% }) %>
 ```
 ## Data Layer
-Google Tag Manager (GTM) tags are used to send data of the game to GA. Some examples can be found on the **/script/main.js** file, specifically in the *getResults* function:
+Google Tag Manager (GTM) tags are used to send data of the game to GA. Some examples can be found on the **/script/main.js** file, specifically in the **getResults()** function:
 ```javascript
 function getResults() { 
     if (score >= 400) {
@@ -78,7 +78,7 @@ function getResults() {
 }
 
 ```
-Other use cases of GTM tags are the download button by *data-role* in the HTML file:
+Other use cases of GTM tags are the download button by **data-role** in the HTML file:
 ```html
 <a id="download" class="bi-download-link"
    href="https://www.avast.com/" 
