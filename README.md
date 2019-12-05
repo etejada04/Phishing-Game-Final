@@ -6,7 +6,7 @@
 2. [How to run the app on server](#how-to-run-the-app-on-server)
 3. [Data source](#data-source)
 3. [Data Layer](#data-layer)
-5. [Useful links](#useful-links)
+5. [Other links](#other-links)
 
 ## Requirements
 The game is required to showcase the following information:
@@ -19,17 +19,11 @@ The game is required to showcase the following information:
 cd C:\Users\Public\app
 node ./node_modules/nodemon/bin/nodemon.js src/app.js
 ```
-Modify variable *sslPort* in **app.js** file
-```javascript
-const sslPort = 443;    //PROD 443 , DEV 8081
-```
-to
+Modify variable *sslPort* in **app.js** file for local development and production.
 ```javascript
 const sslPort = 8081;    //PROD 443 , DEV 8081
 ```
-for testing.
-
-https://localhost:8081/
+Accessible from: https://localhost:8081/ 
 
 Nodemon info https://nodemon.io/
 
