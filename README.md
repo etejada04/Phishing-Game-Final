@@ -19,7 +19,7 @@ The game is required to showcase the following information:
 cd C:\Users\Public\app
 node ./node_modules/nodemon/bin/nodemon.js src/app.js
 ```
-Modify variable *sslPort* in **app.js** file for local development or production.
+Modify variable **sslPort** in **app.js** file for local development or production.
 ```javascript
 const sslPort = 8081;    //PROD 443 , DEV 8081
 ```
@@ -87,6 +87,6 @@ Other use cases of GTM tags are the download button by **data-role** in the HTML
 ```
 ## Other links
 
-Repository of visualization tool created by Tomas Trnka: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game).
+Repository of visualization tool created by Tomas Trnka: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game) (Accessible only from Avast internal Git repository).
 
 Source data: [link](https://drive.google.com/file/d/1XjausBSNNXjtUD2vy1LWzcpUxaS0CyIy/view).
