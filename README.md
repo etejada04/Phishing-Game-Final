@@ -87,6 +87,6 @@ Other use cases of GTM tags are the download button by **data-role** in the HTML
 ```
 ## Other links
 
-Repository of visualization tool created by Tomas Trnka: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game) (Accessible only from Avast internal Git repository).
+Repository of visualization tool created by Tomas Trnka: [link](https://git.int.avast.com/trnkat/crumbs/tree/master/phishing_game) (**Note**: Accessible only from internal Git repository of Avast).
 
 Source data: [link](https://drive.google.com/file/d/1XjausBSNNXjtUD2vy1LWzcpUxaS0CyIy/view).
