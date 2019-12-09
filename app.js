@@ -63,7 +63,7 @@ function readTsv(callback) {
             let status = getRandomInt(0, 1);
             con[5] = status;
 
-            if (fs.existsSync(path.join(__dirname, '/data/images/' + con[status] + '.jpg'))) {
+            if (fs.existsSync(path.join(__dirname, './data/images/' + con[status] + '.jpg'))) {
                 if (items.length > 4) {
                     return true;
                 }
@@ -90,7 +90,7 @@ app.get('/', function (req, res) {
     readTsv(function (data) {
         data.forEach((item) => {
             params.items.push({
-                'img': '/data/images/' + item[item[5]] + '.jpg',
+                'img': './data/images/' + item[item[5]] + '.jpg',
                 'status': item[5],
                 'url': item[item[5] + 2]
             })
