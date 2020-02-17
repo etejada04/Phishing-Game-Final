@@ -30,6 +30,8 @@
             height="0" width="0" style="display:none;visibility:hidden">
     </iframe>
 </noscript>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=278932249245960&autoLogAppEvents=1"></script>
 <header>
     <div id="header-master">
         <img alt="logo-blue" src="img/avast-logo-blue.png" class="avast-logo">
@@ -140,12 +142,6 @@
                             <i class='fas fa-thumbs-down'></i> fake
                         </button>
                     </div>
-                    <div id="dialogue">
-                        <span id="dialogue-img"></span>
-                        <h2 id="dialogue-ans"></h2>
-                        <span id="dialogue-score"></span>
-                        <button id="continue" onclick="move()">continue</button>
-                    </div>
                     <div id="summary-page">
                         <h2><span class="highlight results"></span></h2>
                         <h3><span class="results"></span></h3>
@@ -155,8 +151,21 @@
                         <a id="download" class="bi-download-link" href="https://www.avast.com/" data-role="download-link">
                             download avast
                         </a>
+                        <div id="social-media">
+                            <!--<a>Facebook</a>
+                            <a>Twitter</a>-->
+                            <div class="fb-share-button" data-href="https://phish.avast.com/" data-layout="button" data-size="small">
+                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fphish.avast.com%2F&amp;src=sdkpreparse" 
+                                   class="fb-xfbml-parse-ignore">Compartir</a>
+                            </div>                            
+                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                               class="twitter-share-button" data-text="My score is "
+                               data-url="https://phish.avast.com/" data-hashtags="AvastPhishingChallenge"
+                               data-related="avast_antivirus" data-show-count="false">Tweet</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
                     </div>
-                </div>
+                 </div>
             </div>
         </div>
         <div id="score">
