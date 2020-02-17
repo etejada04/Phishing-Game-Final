@@ -1,19 +1,9 @@
-/**
- *
- * @author Eder Tejada (ederjair.tejadaortigoza@avast.com)
- *
- */
-
 let score = 0;
 let slideIndex = 1;
 let step = 0;
 let urlContent = null;
 let imgContent = null;
 
-/**
- * @brief Load game data
- * @return Load data to the URL bar and image container
- */
 function loadData() {
     urlContent = document.getElementById('url-src');
     imgContent = document.getElementsByClassName('img-src');
@@ -23,23 +13,11 @@ function loadData() {
     showSlides(slideIndex);
 }
 
-/**
- * @brief Function to toggle elem1 and elem2
- * @param elem1 Denotes the first element
- * @param elem2 Denotes the second element
- * @return Hide first element and display the second
- */
 function toggle(elem1, elem2) {
     $(elem1).slideToggle('slow');
     $(elem2).slideToggle('slow');
 }
 
-/**
- * @brief Function to change current game page
- * @param curr Denotes the current container
- * @param next Denotes the next container
- * @return Modify the content of current container and display the next
- */
 function nextPage(curr, next) {
     let header = document.getElementsByTagName('H1')[0];
     let dots = document.getElementsByClassName('dots-container')[0];
@@ -84,10 +62,6 @@ function nextPage(curr, next) {
     }
 }
 
-/**
- * @brief Function to display popup window
- * @return Display the popup window
- */
 function popIt() {
     let popup = document.getElementById('popup');
     let headerMaster = document.getElementById('header-master');
@@ -109,10 +83,6 @@ function popIt() {
     }
 }
 
-/**
- * @brief Function to retrieve the final result in the summary page based on final score
- * @return Update results of the summary page according to the score
- */
 function getResults() {
     let header = document.getElementsByClassName('results')[0];
     let subheader = document.getElementsByClassName('results')[1];
@@ -135,10 +105,6 @@ function getResults() {
     }
 }
 
-/**
- * @brief Function to update the score counter
- * @return Update the score
- */
 function getScore(val) {
     let points = document.getElementsByClassName('score-cnt');
     score += val;
@@ -147,10 +113,6 @@ function getScore(val) {
     }
 }
 
-/**
- * @brief Function to move to the next image based on current index
- * @param n Denotes the slide index
- */
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName('mySlides');
@@ -176,21 +138,19 @@ function showSlides(n) {
     dots[5 + slideIndex - 1].className += ' active';
 }
 
-/**
- * @brief Function to handle game answers based on data status
- * @return Handle the input provided by the buttons during the game and display appropriate dialogue
- */
 function isPhishing(answer) {
     let dialogueWindow = document.getElementById('dialogue');
     let dialogueImg = document.getElementById('dialogue-img');
     let dialogueAns = document.getElementById('dialogue-ans');
     let dialogueScore = document.getElementById('dialogue-score');
+    let dialogueTip = document.getElementById('dialogue-tip');
     let imageWindow = document.getElementById('img-container');
     let btnReal = document.getElementById('real');
     let btnFake = document.getElementById('fake');
     let correct = '<i class=\'fas fa-thumbs-up\' style="color: #160E53; font-size: 8em;"></i>';
     let incorrect = '<i class=\'fas fa-thumbs-down\' style="color: #160E53; font-size: 8em;"></i>';
     let currStatus = imgContent[step].getAttribute('data-status') === '1';
+    let res = -1;
 
     $(btnReal).fadeOut(100);
     $(btnFake).fadeOut(100);
@@ -201,42 +161,32 @@ function isPhishing(answer) {
     let imgPath = img.src.substring(0,img.src.length - 4);
     let newSrc = imgPath + '_err.jpg';
 
-    if (answer === currStatus) {
-        dialogueImg.innerHTML = correct;
-        dialogueAns.textContent = 'Good job!';
-        dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">100 points</span></h3>';
+
+    if ((answer && currStatus) || (!answer && currStatus)) {
+        dialogueImg.innerHTML = answer ? correct : incorrect;
+        dialogueAns.textContent = answer ? 'Good job!' : 'Oops..';
+        dialogueScore.textContent = answer ? '100 points' : '0 points';
+        if (!answer) dialogueTip.style.display = 'inline-block';
+        answer ? getScore(100) : getScore(0);
         toggle(imageWindow, dialogueWindow);
-        getScore(100);
-    } else {
-        if (currStatus) {
-            dialogueImg.innerHTML = incorrect;
-            dialogueAns.textContent = 'Oops..';
-            dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>';
+    } else { // (answer === false && currStatus === false) || (answer === true && currStatus === false)
+        $(imageWindow).fadeOut(500, function() {
+            $(img).prop('src', newSrc + '?' + Math.random());
+        }).fadeIn(2000);
+        $(urlbar).css({'background-color': '#f69ab3'});
+        setTimeout(function(){
+            $(urlbar).css({'background-color' : '#f4f3fa'});
+            dialogueImg.innerHTML = !answer  ? correct : incorrect;
+            dialogueAns.textContent = !answer ? 'Good job!' : 'Oops..';
+            dialogueScore.textContent = !answer ? '100 points' : '0 points';
+            if (answer) dialogueTip.style.display = 'inline-block';
+            !answer ? getScore(100) : getScore(0);
             toggle(imageWindow, dialogueWindow);
-            getScore(0);
-        } else {
-            $(imageWindow).fadeOut(500, function() {
-                $(img).prop('src', newSrc + '?' + Math.random());
-            }).fadeIn(2000);
-            $(urlbar).css({'background-color': '#f69ab3'});
-            setTimeout(function(){
-                $(urlbar).css({'background-color' : '#f4f3fa'});
-                dialogueImg.innerHTML = incorrect;
-                dialogueAns.textContent = 'Oops..';
-                dialogueScore.innerHTML = '<h3>You scored: <span class="highlight">0 points</span></h3>'
-                                            + '<p><i class=\'far fa-lightbulb\'></i> Watch out for suspicious URLs'
-                                            + ', buttons, text fields or missing logos!</p>';
-                toggle(imageWindow, dialogueWindow);
-                getScore(0);
-            }, 6000);
-        }
+        }, 6000);
     }
+    dialogueTip.style.display = 'none';
 }
 
-/**
- * @brief Function to close current dialogue window and move to the next image or page
- * @return Close dialogue and move to the next image
- */
 function move() {
     let dialogue = document.getElementById('dialogue');
     let imageWindow = document.getElementById('img-container');
@@ -252,4 +202,3 @@ function move() {
     step++;
     urlContent.textContent = jsonData[step].url.substr(0, 60);
 }
-
