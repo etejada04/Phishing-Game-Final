@@ -4,6 +4,11 @@ let step = 0;
 let urlContent = null;
 let imgContent = null;
 
+window.onload = function(){
+    var el = document.getElementById('loader');
+    el.style.display = 'none';
+};
+
 function loadData() {
     urlContent = document.getElementById('url-src');
     imgContent = document.getElementsByClassName('img-src');
