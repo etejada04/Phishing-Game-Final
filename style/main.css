@@ -313,6 +313,12 @@ header button {
 #summary-page p {
     margin-bottom: 10%;
 }
+#summary-page .fa-facebook {
+     color: #1778F2;
+}
+#summary-page .fa-twitter {
+    color: #00acee;
+}
 #download {
     text-decoration: none;
     padding: 1.2em;
