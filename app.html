@@ -25,13 +25,34 @@
     })(window,document,'script','dataLayer','GTM-MB289WJ');</script>
 </head>
 <body>
+    <script>
+    function hand() {
+        var a;
+        a = document.getElementById("load-icons");
+        a.innerHTML = "<i class='far fa-lightbulb'></i>";
+        a.innerHTML = "&#xf25a;";
+        setTimeout(function () {
+            a.innerHTML = "&#xf256;";
+        }, 500);
+        setTimeout(function () {
+            a.innerHTML = "&#xf259;";
+        }, 1000);
+        setTimeout(function () {
+            a.innerHTML = "&#xf256;";
+        }, 1500);
+    }
+    hand();
+    setInterval(hand, 2000);
+</script>
+<div id="loader">
+    <div id="load-icons"></div>
+    <p>Did you know that?....</p>
+</div>
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MB289WJ"
             height="0" width="0" style="display:none;visibility:hidden">
     </iframe>
 </noscript>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v6.0&appId=278932249245960&autoLogAppEvents=1"></script>
 <header>
     <div id="header-master">
         <img alt="logo-blue" src="img/avast-logo-blue.png" class="avast-logo">
@@ -160,17 +181,9 @@
                             download avast
                         </a>
                         <div id="social-media">
-                            <!--<a>Facebook</a>
-                            <a>Twitter</a>-->
-                            <div class="fb-share-button" data-href="https://phish.avast.com/" data-layout="button" data-size="small">
-                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fphish.avast.com%2F&amp;src=sdkpreparse" 
-                                   class="fb-xfbml-parse-ignore">Compartir</a>
-                            </div>                            
-                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                               class="twitter-share-button" data-text="My score is "
-                               data-url="https://phish.avast.com/" data-hashtags="AvastPhishingChallenge"
-                               data-related="avast_antivirus" data-show-count="false">Tweet</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            <p>Share your score</p>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://phish.avast.com/"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/intent/tweet?text=https://phish.avast.com/%20Can%20you%20beat%20my%20score%20at%20the%20Avast%20Phishing%20Challenge?"><i class="fab fa-twitter"></i></a>
                         </div>
                     </div>
                  </div>
